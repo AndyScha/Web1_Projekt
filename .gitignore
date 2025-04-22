@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Log files
+npm-debug.log
+yarn-error.log
+*.log
+
+# Mac OS specific
+.DS_Store
+
+# Build and output directories
+dist/
+public/style.css
+
+# IDE-specific files
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Operating System files
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,20 @@
+{
+  "name": "Web1Projekt",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "build:css": "node ./node_modules/tailwindcss/lib/cli.js -i ./public/src/input.css -o ./public/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

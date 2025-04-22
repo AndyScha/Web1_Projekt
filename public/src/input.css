@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* TrenchSlab Font */
+@font-face {
+  font-family: "TrenchSlab";
+  src: url("/assets/fonts/TrenchSlab-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TrenchSlab";
+  src: url("/assets/fonts/TrenchSlab-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TrenchSlab";
+  src: url("/assets/fonts/TrenchSlab-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TrenchSlab";
+  src: url("/assets/fonts/TrenchSlab-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TrenchSlab";
+  src: url("/assets/fonts/TrenchSlab-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Hinter allem */
+  object-fit: cover; /* Füllt den Bildschirm */
+}
+
+h1, h2 {
+  font-family: "TrenchSlab", serif;
+}
