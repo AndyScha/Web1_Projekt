@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node server.js",
-    "build:css": "node ./node_modules/tailwindcss/lib/cli.js -i ./public/src/input.css -o ./public/style.css --watch"
+  "build:css": "node ./node_modules/tailwindcss/lib/cli.js -i ./public/css/input.css -o ./public/css/style.css --watch"
   },
   "keywords": [],
   "author": "",
