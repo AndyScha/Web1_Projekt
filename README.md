@@ -15,24 +15,21 @@ Das Projekt wurde unter Verwendung von **HTML**, **CSS (Tailwind CSS)** und **Ja
 - **Automatisierte Tests**: Alle relevanten Seiten und Buttons müssen **IDs** enthalten, um die Funktionalität zu testen
 
 ## Projektstruktur
-/Web1Projekt
-│
-├── /public
-│   ├── /assets
-│   │   ├── /pictures           # Bilder (z. B. Logo, etc.)
-│   │   ├── /video              # Videos
-│   ├── /index.html             # Landing-Page
-│   ├── /start.html             # Start-Seite nach dem Login
-│   ├── /impressum.html         # Impressum-Seite
-│   ├── /user-management.html  # User-Management-Seite
-│   ├── /registrierung.html     # Registrierung-Seite
-│   └── /style.css              # Styling für die Seiten
-│
-├── /node_modules               # Node.js Module (z. B. für Tailwind CSS)
-│
-├── .gitignore                  # Gitignore-Datei
-├── package.json                # NPM-Pakete und Skripte
-└── README.md                   # Projektbeschreibung
+- Web1Projekt
+  - public
+    - assets
+      - pictures           # Bilder
+      - video              # Videos
+    - index.html           # Landing-Page
+    - start.html           # Start-Seite nach dem Login
+    - impressum.html       # Impressum-Seite
+    - user-management.html # User-Management-Seite
+    - registrierung.html   # Registrierungs-Seite
+    - style.css            # Styling für die Seiten
+  - node_modules           # Node.js Module
+  - .gitignore             # Gitignore-Datei
+  - package.json           # NPM-Pakete und Skripte
+  - README.md              # Projektbeschreibung
 
 ## Funktionsweise
 
@@ -90,11 +87,11 @@ Alle wichtigen **Formulare**, **Buttons**, **Links** und **Tabellen** wurden mit
     ```bash
     npm run build:css
 
-4.Starte den Server:
+4. Starte den Server:
     ```bash
     npm start
 
-5.Öffne deinen Browser und gehe zu http://localhost:80, um die Anwendung zu testen.
+5. Öffne deinen Browser und gehe zu http://localhost:80, um die Anwendung zu testen.
 
 Testen
 
