@@ -18,18 +18,18 @@ Das Projekt wurde unter Verwendung von **HTML**, **CSS (Tailwind CSS)** und **Ja
 - Web1Projekt
   - public
     - assets
-      - pictures           # Bilder
-      - video              # Videos
-    - index.html           # Landing-Page
-    - start.html           # Start-Seite nach dem Login
-    - impressum.html       # Impressum-Seite
-    - user-management.html # User-Management-Seite
-    - registrierung.html   # Registrierungs-Seite
-    - style.css            # Styling für die Seiten
-  - node_modules           # Node.js Module
-  - .gitignore             # Gitignore-Datei
-  - package.json           # NPM-Pakete und Skripte
-  - README.md              # Projektbeschreibung
+      - pictures           
+      - video              
+    - index.html           
+    - start.html           
+    - impressum.html       
+    - user-management.html 
+    - registrierung.html   
+    - style.css            
+  - node_modules           
+  - .gitignore             
+  - package.json           
+  - README.md              
 
 ## Funktionsweise
 
