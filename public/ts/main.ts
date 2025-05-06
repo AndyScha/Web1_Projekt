@@ -1,5 +1,7 @@
 import { ApplicationManager } from "./ApplicationManager.js";
 
+ApplicationManager.loadUsersFromStorage();
+
 document.getElementById("ButtonSignupUser")?.addEventListener("click", function (e) {
   e.preventDefault();
   const emailInput = document.getElementById("signup-email") as HTMLInputElement | null;
@@ -87,14 +89,20 @@ function showToast(message: string, type: "success" | "error" | "warning") {
 }
 
 function toggleForms(formType: "login" | "signup") {
-    const loginForm = document.getElementById("FormLogin");
-    const signupForm = document.getElementById("FormSignup");
-  
-    if (formType === "signup") {
-      loginForm?.classList.add("hidden");
-      signupForm?.classList.remove("hidden");
-    } else {
-      signupForm?.classList.add("hidden");
-      loginForm?.classList.remove("hidden");
-    }
+  const loginForm = document.getElementById("FormLogin");
+  const signupForm = document.getElementById("FormSignup");
+
+  if (formType === "signup") {
+    loginForm?.classList.add("hidden");
+    signupForm?.classList.remove("hidden");
+  } else {
+    signupForm?.classList.add("hidden");
+    loginForm?.classList.remove("hidden");
   }
+}
+
+// Logout-Button-Handler (ohne Seitenreload)
+document.getElementById("LinkLogout")?.addEventListener("click", function (e) {
+  e.preventDefault();
+  ApplicationManager.logout();
+});

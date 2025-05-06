@@ -1,5 +1,6 @@
-var _a, _b;
+var _a, _b, _c;
 import { ApplicationManager } from "./ApplicationManager.js";
+ApplicationManager.loadUsersFromStorage();
 (_a = document.getElementById("ButtonSignupUser")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", function (e) {
     e.preventDefault();
     const emailInput = document.getElementById("signup-email");
@@ -90,3 +91,8 @@ function toggleForms(formType) {
         loginForm === null || loginForm === void 0 ? void 0 : loginForm.classList.remove("hidden");
     }
 }
+// Logout-Button-Handler (ohne Seitenreload)
+(_c = document.getElementById("LinkLogout")) === null || _c === void 0 ? void 0 : _c.addEventListener("click", function (e) {
+    e.preventDefault();
+    ApplicationManager.logout();
+});
