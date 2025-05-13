@@ -4,25 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WE-1 SPA</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <nav id="TopMenu" class="bg-gray-800 text-white">
-    <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <a href="#" id="LinkRoot" class="text-xl font-bold">WE-1 SPA</a>
-      <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+<body class="bg-gray-100">
+  <nav id="TopMenu" class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" id="LinkRoot" class="text-xl font-semibold">WE-1 SPA</a>
+      <button class="lg:hidden text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-gray-400" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" clip-rule="evenodd"></path>
         </svg>
       </button>
-      <div id="navbarNav" class="hidden lg:flex space-x-6">
-        <a href="#" id="LinkImpressum" class="hover:text-emerald-400">Impressum</a>
-        <a href="#" id="LinkUserManagement" class="hidden hover:text-emerald-400" id="userManagementNavItem">User Management</a>
+      <div class="hidden lg:flex space-x-4" id="navbarNav">
+        <ul class="flex space-x-4">
+          <li>
+            <a href="#" id="LinkImpressum" class="hover:text-gray-400">Impressum</a>
+          </li>
+          <li id="userManagementNavItem" class="hidden">
+            <a href="#" id="LinkUserManagement" class="hover:text-gray-400">User Management</a>
+          </li>
+          <li id="logoutNavItem" class="hidden">
+            <a href="#" id="LinkLogout" class="hover:text-gray-400">Logout</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-  <div id="app" class="container mx-auto mt-4"></div>
+  <div id="app" class="container mx-auto mt-4">
+    <div class="bg-white p-6 rounded-md shadow-md">
+      <h1 class="text-2xl font-bold mb-4">Willkommen auf unserer SPA!</h1>
+      <p class="text-gray-700 leading-relaxed mb-4">Das ist die Startseite mit Tailwind-Styling.</p>
+      <hr class="my-4 border-gray-300">
+      <p class="text-gray-600 mb-4">Klicken Sie auf die Links oben zur Navigation.</p>
+      <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Mehr erfahren</a>
+    </div>
+  </div>
   <div id="toast" class="toast"></div>
   <script type="module" src="js/dist/ApplicationLoader.js"></script>
 </body>

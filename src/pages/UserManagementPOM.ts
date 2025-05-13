@@ -1,5 +1,5 @@
-import { AbstractPOM } from './AbstractPOM';
-import { ApplicationManager } from '../ApplicationManager';
+import { AbstractPOM } from './AbstractPOM.js';
+import { ApplicationManager } from '../ApplicationManager.js';
 
 export class UserManagementPOM extends AbstractPOM {
   constructor(appManager: ApplicationManager) {

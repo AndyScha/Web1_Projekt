@@ -1,8 +1,8 @@
-import { User } from '@domain/User';
-import { LandingPagePOM } from '@pages/LandingPagePOM';
-import { StartPagePOM } from '@pages/StartPagePOM';
-import { ImpressumPagePOM } from '@pages/ImpressumPagePOM';
-import { UserManagementPOM } from '@pages/UserManagementPOM';
+import { User } from './domain/User.js';
+import { LandingPagePOM } from './pages/LandingPagePOM.js';
+import { StartPagePOM } from './pages/StartPagePOM.js';
+import { ImpressumPagePOM } from './pages/ImpressumPagePOM.js';
+import { UserManagementPOM } from './pages/UserManagementPOM.js';
 
 export class ApplicationManager {
   private users: User[] = [];
