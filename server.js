@@ -1,13 +1,19 @@
-// server.js (im Projektverzeichnis)
-const express = require("express");
-const path = require("path");
-
+const express = require('express');
+const path = require('path');
 const app = express();
-const PORT = 80;
+const port = 80;
 
-// Beispiel: Statisches Ausliefern des public-Ordners
-app.use(express.static(path.join(__dirname, "public")));
+// MIME-Typ für CSS erzwingen
+app.use((req, res, next) => {
+  if (req.url.endsWith('.css')) {
+    res.setHeader('Content-Type', 'text/css');
+  }
+  next();
+});
 
-app.listen(PORT, () => {
-  console.log(`Server läuft auf http://localhost:${PORT}`);
+// Statische Dateien aus public/ ausliefern
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
 });
