@@ -186,6 +186,17 @@
           toggleForms("signup");
         });
       }
+
+
+      // Im Session Storage merken, ob die Seite schon einmal geladen wurde
+window.addEventListener("DOMContentLoaded", () => {
+  if (sessionStorage.getItem("alreadyLoaded")) {
+    // Nur beim Refresh (nicht beim ersten Aufruf)
+    localStorage.clear();
+  } else {
+    sessionStorage.setItem("alreadyLoaded", "true");
+  }
+});
     </script>
     <script type="module" src="/ts/main.js"></script>
     </body>
