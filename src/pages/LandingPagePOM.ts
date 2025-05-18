@@ -20,56 +20,60 @@ export class LandingPagePOM extends AbstractPOM {
       return;
     }
     app.innerHTML = `
-      <div id="LandingPage">
-        <div id="FormLogin" class="card">
-          <div class="card-body">
-            <h2 class="card-title">Login</h2>
-            <div class="mb-3">
-              <input type="text" id="FormLoginUsername" class="form-control" placeholder="Username">
-            </div>
-            <div class="mb-3">
-              <input type="password" id="FormLoginPassword" class="form-control" placeholder="Password">
-            </div>
-            <button id="ButtonLoginUser" class="btn btn-primary">Login</button>
-            <a href="#" id="LinkShowSignupDialog" class="d-block mt-2">Registrieren</a>
+      <div id="LandingPage" class="flex justify-center items-center min-h-screen bg-gray-100">
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md" id="FormLogin">
+          <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+          <div class="mb-4">
+            <input type="text" id="FormLoginUsername" placeholder="Username"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
           </div>
+          <div class="mb-4">
+            <input type="password" id="FormLoginPassword" placeholder="Password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+          <button id="ButtonLoginUser"
+            class="w-full bg-emerald-400 hover:bg-lime-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-4 focus:ring-emerald-300">
+            Login
+          </button>
+          <a href="#" id="LinkShowSignupDialog" class="block mt-4 text-center text-emerald-600 hover:underline">Registrieren</a>
         </div>
-        <div id="FormSignup" class="card" style="display: none;">
-          <div class="card-body">
-            <h2 class="card-title">Registrieren</h2>
-            <div class="mb-3">
-              <input type="text" id="FormSignupUsername" class="form-control" placeholder="Username">
-            </div>
-            <div class="mb-3">
-              <input type="password" id="FormSignupPassword" class="form-control" placeholder="Password">
-            </div>
-            <div class="mb-3">
-              <input type="text" id="FormSignupFirstName" class="form-control" placeholder="Vorname">
-            </div>
-            <div class="mb-3">
-              <input type="text" id="FormSignupLastName" class="form-control" placeholder="Nachname">
-            </div>
-            <button id="ButtonSignupUser" class="btn btn-primary">Registrieren</button>
-            <a href="#" id="LinkShowLoginDialog" class="d-block mt-2">Zum Login</a>
+
+        <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-md hidden" id="FormSignup">
+          <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Registrieren</h2>
+          <div class="mb-4">
+            <input type="text" id="FormSignupUsername" placeholder="Username"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
           </div>
+          <div class="mb-4">
+            <input type="password" id="FormSignupPassword" placeholder="Password"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+          <div class="mb-4">
+            <input type="text" id="FormSignupFirstName" placeholder="Vorname"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+          <div class="mb-4">
+            <input type="text" id="FormSignupLastName" placeholder="Nachname"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+          </div>
+          <button id="ButtonSignupUser"
+            class="w-full bg-emerald-400 hover:bg-lime-700 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:ring-4 focus:ring-emerald-300">
+            Registrieren
+          </button>
+          <a href="#" id="LinkShowLoginDialog" class="block mt-4 text-center text-emerald-600 hover:underline">Zum Login</a>
         </div>
       </div>
     `;
     topMenu.innerHTML = `
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" id="LinkRoot">WE-1 SPA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#" id="LinkImpressum">Impressum</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    `;
+  <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
+    <a href="#" id="LinkRoot" class="flex items-center space-x-2">
+      <span class="text-transparent text-2xl bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 font-bold whitespace-nowrap">WE-1 SPA</span>
+    </a>
+    <ul class="flex space-x-6">
+      <li><a href="#" id="LinkImpressum" class="text-white hover:text-emerald-500">Impressum</a></li>
+    </ul>
+  </div>
+`;
     console.log('LandingPagePOM: HTML eingefügt');
     this.attachEventListeners();
     console.log('LandingPagePOM: Event-Listener angehängt');
@@ -107,12 +111,16 @@ export class LandingPagePOM extends AbstractPOM {
       const firstName = (document.getElementById('FormSignupFirstName') as HTMLInputElement).value;
       const lastName = (document.getElementById('FormSignupLastName') as HTMLInputElement).value;
       if (this.appManager.registerUser(username, password, firstName, lastName)) {
-        (document.getElementById('FormSignupUsername') as HTMLInputElement).value = '';
-        (document.getElementById('FormSignupPassword') as HTMLInputElement).value = '';
-        (document.getElementById('FormSignupFirstName') as HTMLInputElement).value = '';
-        (document.getElementById('FormSignupLastName') as HTMLInputElement).value = '';
-        document.getElementById('FormSignup')!.style.display = 'none';
-        document.getElementById('FormLogin')!.style.display = 'block';
+        // Felder sicher leeren, aber auf dem Registrierungsformular bleiben
+        const usernameField = document.getElementById('FormSignupUsername') as HTMLInputElement | null;
+        const passwordField = document.getElementById('FormSignupPassword') as HTMLInputElement | null;
+        const firstNameField = document.getElementById('FormSignupFirstName') as HTMLInputElement | null;
+        const lastNameField = document.getElementById('FormSignupLastName') as HTMLInputElement | null;
+
+        if (usernameField) usernameField.value = '';
+        if (passwordField) passwordField.value = '';
+        if (firstNameField) firstNameField.value = '';
+        if (lastNameField) lastNameField.value = '';
       }
     });
 

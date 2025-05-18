@@ -12,33 +12,28 @@ export class StartPagePOM extends AbstractPOM {
     const app = document.getElementById('app');
     const topMenu = document.getElementById('TopMenu');
     if (app && topMenu) {
-      app.innerHTML = `
-        <div id="StartPage">
-          <h2 id="StartPageWelcomeText">Willkommen, <span id="UserCount">${this.appManager.getUserCount()}</span> User sind registriert!</h2>
-          <a href="#" id="StartPageLinkUserManagement" class="btn btn-link">Zum User Management</a>
-        </div>
-      `;
       topMenu.innerHTML = `
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#" id="LinkRoot">WE-1 SPA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="LinkImpressum">Impressum</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="LinkUserManagement">User Management</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#" id="LinkLogout">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      `;
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between px-4 py-4">
+      <a href="#" id="LinkRoot" class="flex items-center space-x-2">
+        <span class="text-transparent text-2xl bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-600 font-bold whitespace-nowrap">WE-1 SPA</span>
+      </a>
+      <ul class="flex space-x-6">
+        <li><a href="#" id="LinkImpressum" class="text-gray-700 hover:text-emerald-500">Impressum</a></li>
+        <li><a href="#" id="LinkUserManagement" class="text-gray-700 hover:text-emerald-500">User Management</a></li>
+        <li><a href="#" id="LinkLogout" class="text-red-500 font-medium hover:underline">Logout</a></li>
+      </ul>
+    </div>
+  `;
+      app.innerHTML = `
+  <div id="StartPage" class="flex flex-col items-center justify-center min-h-screen text-center space-y-6">
+    <h2 id="StartPageWelcomeText" class="text-3xl font-bold text-emerald-600">
+      Willkommen, <span id="UserCount">${this.appManager.getUserCount()}</span> User sind registriert!
+    </h2>
+    <a href="#" id="StartPageLinkUserManagement" class="bg-emerald-400 hover:bg-lime-700 text-white font-medium rounded-md px-6 py-3 shadow-md">
+      Zum User Management
+    </a>
+  </div>
+`;
       this.attachEventListeners();
       console.log('StartPagePOM: HTML eingefügt und Event-Listener angehängt');
     }
