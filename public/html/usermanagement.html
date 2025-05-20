@@ -1,73 +1,130 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User-Management</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-900">
-
-  <!-- Navigation -->
-  <nav class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
-    <div class="flex space-x-6">
-      <a href="../html/start.html" id="LinkRoot" class="text-xl font-bold text-emerald-600 hover:text-emerald-800">
-        WE-1 SPA
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User-Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+      <div class="flex space-x-6">
+        <a
+          href="../html/start.html"
+          id="LinkRoot"
+          class="text-xl font-bold text-emerald-600 hover:text-emerald-800"
+        >
+          WE-1 SPA
+        </a>
+        <a
+          href="../html/impressumlog.html"
+          id="LinkImpressum"
+          class="text-gray-700 hover:text-emerald-500"
+        >
+          Impressum
+        </a>
+        <a
+          href="../html/usermanagement.html"
+          id="LinkUserManagement"
+          class="text-gray-700 hover:text-emerald-500"
+        >
+          User-Management
+        </a>
+      </div>
+      <a
+        href="/"
+        id="LinkLogout"
+        class="text-red-500 font-medium hover:underline"
+      >
+        Logout
       </a>
-      <a href="../html/impressumlog.html" id="LinkImpressum" class="text-gray-700 hover:text-emerald-500">
-        Impressum
-      </a>
-      <a href="../html/usermanagement.html" id="LinkUserManagement" class="text-gray-700 hover:text-emerald-500">
-        User-Management
-      </a>
-    </div>
-    <a href="/" id="LinkLogout" class="text-red-500 font-medium hover:underline">
-      Logout
-    </a>
-  </nav>
+    </nav>
 
-  <!-- Hauptbereich -->
-  <main id="UserManagementPage" class="max-w-5xl mx-auto p-6 space-y-6">
-    <h1 id="user-management-title" class="text-3xl font-bold text-emerald-600 text-center">
-      User Management
-    </h1>
+    <!-- Hauptbereich -->
+    <main id="UserManagementPage" class="max-w-5xl mx-auto p-6 space-y-6">
+      <h1
+        id="user-management-title"
+        class="text-3xl font-bold text-emerald-600 text-center"
+      >
+        User Management
+      </h1>
 
-    <!-- Button -->
-    <div class="flex justify-end">
-      <button id="ButtonAddUser" class="bg-emerald-400 hover:bg-lime-700 text-white font-medium rounded-md px-4 py-2">
-        User hinzufügen
-      </button>
-    </div>
+      <!-- Button -->
+      <div class="flex justify-end">
+        <button
+          id="ButtonAddUser"
+          class="bg-emerald-400 hover:bg-lime-700 text-white font-medium rounded-md px-4 py-2"
+        >
+          User hinzufügen
+        </button>
+      </div>
 
-    <!-- Tabelle -->
-    <div class="overflow-x-auto">
-      <table id="TableUsers" class="min-w-full bg-white rounded-lg shadow-md">
-        <thead class="bg-emerald-500 text-white">
-          <tr>
-            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">User-ID</th>
-            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">First Name</th>
-            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Last Name</th>
-            <th class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="border-b hover:bg-gray-50">
-            <td id="adminTableItemUsername" class="px-6 py-4 whitespace-nowrap">admin</td>
-            <td id="adminTableItemFirstName" class="px-6 py-4 whitespace-nowrap">Tagir</td>
-            <td id="adminTableItemLastName" class="px-6 py-4 whitespace-nowrap">Soltanakhmedov</td>
-            <td class="px-6 py-4 space-x-2">
-              <button id="adminTableItemEditButton" class="bg-blue-500 hover:bg-blue-700 text-white rounded-md px-3 py-1 text-sm">
-                Edit
-              </button>
-              <button id="adminTableItemDeleteButton" class="bg-red-500 hover:bg-red-700 text-white rounded-md px-3 py-1 text-sm">
-                Delete
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
-
-</body>
+      <!-- Tabelle -->
+      <div class="overflow-x-auto">
+        <table id="TableUsers" class="min-w-full bg-white rounded-lg shadow-md">
+          <thead class="bg-emerald-500 text-white">
+            <tr>
+              <th
+                class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider"
+              >
+                User-ID
+              </th>
+              <th
+                class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider"
+              >
+                First Name
+              </th>
+              <th
+                class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider"
+              >
+                Last Name
+              </th>
+              <th
+                class="px-6 py-3 text-left text-sm font-medium uppercase tracking-wider"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-gray-50">
+              <td
+                id="adminTableItemUsername"
+                class="px-6 py-4 whitespace-nowrap"
+              >
+                admin
+              </td>
+              <td
+                id="adminTableItemFirstName"
+                class="px-6 py-4 whitespace-nowrap"
+              >
+                Tagir
+              </td>
+              <td
+                id="adminTableItemLastName"
+                class="px-6 py-4 whitespace-nowrap"
+              >
+                Soltanakhmedov
+              </td>
+              <td class="px-6 py-4 space-x-2">
+                <button
+                  id="adminTableItemEditButton"
+                  class="bg-blue-500 hover:bg-blue-700 text-white rounded-md px-3 py-1 text-sm"
+                >
+                  Edit
+                </button>
+                <button
+                  id="adminTableItemDeleteButton"
+                  class="bg-red-500 hover:bg-red-700 text-white rounded-md px-3 py-1 text-sm"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
